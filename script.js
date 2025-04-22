@@ -3,6 +3,7 @@ const elements = {
   photoGrid: document.getElementById("photoGrid"), //Container da Grade de Fotos
   uploadModal: document.getElementById("uploadModal"), // Modal de Upload
   addPhotoButton: document.getElementById("addPhotoBtn"), // Botão para abrir o Modal
+  btnDelete: document.getElementById("btnDelete"), // Botão excluir feito por min 
   closeButton: document.querySelector(".close"), // Botão para fechar Modal
   uploadForm: document.getElementById("uploadForm"), // Upload do Formulario
   toast: document.getElementById("toast"), // Elemento para notificação
@@ -77,6 +78,8 @@ function renderPhotoGrid(photos) {
 function createPhotoCardElement(photo) {
   const card = document.createElement("div");
   card.className = "photo-card"; // Aplica a classe CSS para estilos
+  const deletePhoto = document.createElement("button");
+  deletePhoto.className = "btnDelete";
 
   // Monta URL para a imagem (API + ID da foto + /image)
   const imageUrl = `${config.apiUrl}/${photo._id}/image`;
